@@ -9,23 +9,10 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-surface py-8 relative">
+    <footer className="relative py-8 bg-surface">
       <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-text-secondary text-sm">&copy; {new Date().getFullYear()} Prayas Pandey. All rights reserved.</p>
-        <div className="flex gap-6">
-          {socialLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl text-text-secondary hover:text-accent transition-colors duration-300"
-            >
-              {link.icon}
-            </a>
-          ))}
-        </div>
+      <div className="flex flex-col items-center justify-center gap-4 px-6 mx-auto max-w-7xl md:flex-row">
+        <p className="text-sm text-text-secondary">&copy; {new Date().getFullYear()} Prayas Pandey. All rights reserved.</p>
       </div>
     </footer>
   );
