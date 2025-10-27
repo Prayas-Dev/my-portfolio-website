@@ -32,6 +32,14 @@ import netlifyLogo from './assets/tech_logo/netlify.png';
 import vercelLogo from './assets/tech_logo/vercel.png';
 import postgreLogo from './assets/tech_logo/postgre.png';
 import djangoLogo from './assets/tech_logo/django.png';
+import tensorflowLogo from './assets/tech_logo/tensorflow.png';
+import skLearnLogo from './assets/tech_logo/scikit-learn.png';
+import langchainLogo from './assets/tech_logo/langchain.png';
+import openaiLogo from './assets/tech_logo/openai.png';
+import geminiLogo from './assets/tech_logo/gemini.jpg';
+import nltkLogo from './assets/tech_logo/nltk.png';
+import huggingfaceLogo from './assets/tech_logo/huggingface.png';
+import promptEngineeringLogo from './assets/tech_logo/prompt-engineering.jpg';
 
 
 
@@ -88,6 +96,20 @@ export const SkillsInfo = [
       { name: 'Figma', logo: figmaLogo },
     ],
   },
+  {
+  title: 'AI & Machine Learning',
+  skills: [
+    { name: 'TensorFlow', logo: tensorflowLogo },
+    { name: 'Scikit-learn', logo: skLearnLogo },
+    { name: 'LangChain', logo: langchainLogo },
+    { name: 'OpenAI API', logo: openaiLogo },
+    { name: 'Gemini API', logo: geminiLogo },
+    { name: 'NLTK', logo: nltkLogo },
+    { name: 'Hugging Face Transformers', logo: huggingfaceLogo },
+    { name: 'Prompt Engineering', logo: promptEngineeringLogo },
+  ],
+},
+
 ];
 
   export const experiences = [  

@@ -9,32 +9,36 @@ const Experience = () => {
     threshold: 0.1,
   });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.5, delayChildren: 0.2 },
-    },
-  };
+  
 
   const itemVariants = {
     hidden: { x: -100, opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
   };
 
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
-  };
+  const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+  },
+};
+
+const cardVariants = {
+  hidden: { y: 30, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.4 } },
+};
+
 
   return (
     <section id="experience" ref={ref} className="py-20 bg-surface">
       <motion.div
-        className="px-6 mx-auto max-w-7xl"
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-      >
+  ref={ref}
+  variants={containerVariants}
+  initial="hidden"
+  animate={inView ? 'visible' : 'hidden'}
+>
+
         <motion.h2 variants={itemVariants} className="mb-12 text-4xl font-bold text-center font-mona-sans text-accent">Experience</motion.h2>
 
         {/* Mobile Card Layout */}

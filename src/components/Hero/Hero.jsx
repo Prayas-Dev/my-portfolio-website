@@ -22,14 +22,18 @@ const Hero = () => {
             A passionate Full Stack Developer with a love for creating beautiful and functional web applications.
           </p>
           <motion.a
-            href="#contact"
-            className="relative inline-block px-6 py-3 mt-8 overflow-hidden font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg group bg-primary hover:scale-105"
-            whileHover={{ scale: 1.1 }}
-          >
-            <span className="relative z-10">Get in Touch</span>
-            {/* Neon glow effect */}
-            <span className="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 bg-gradient-to-r from-primary via-accent to-primary group-hover:opacity-100 animate-pulse"></span>
-          </motion.a>
+  href="/Resume_Updated.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.1 }}
+  className="relative inline-block px-6 py-3 mt-8 overflow-hidden font-semibold text-white rounded-lg group"
+>
+  <span className="relative z-10">View Resume</span>
+
+  {/* Neon glow effect */}
+  <span className="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 bg-gradient-to-r from-primary via-accent to-primary group-hover:opacity-100 animate-pulse"></span>
+</motion.a>
+
         </motion.div>
         <motion.div
           className="relative flex items-center justify-center flex-1"
