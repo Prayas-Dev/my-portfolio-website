@@ -56,7 +56,7 @@ const Work = () => {
 
   {/* Overlay for View Project */}
   <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 opacity-0 backdrop-blur-md bg-gradient-to-t from-black/70 to-transparent group-hover:opacity-100">
-    <p className="text-lg font-bold text-white">View Project</p>
+    <p className="text-lg font-bold text-white cursor-pointer">View Project</p>
   </div>
 
   {/* Glowing border on hover */}

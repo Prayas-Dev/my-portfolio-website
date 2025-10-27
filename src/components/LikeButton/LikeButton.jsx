@@ -1,58 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { FaHeart } from 'react-icons/fa';
 
+// 🧠 Global variable for like count
+let globalLikeCount = 0;
+
 const LikeButton = ({ isOverlayOpen }) => {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState(globalLikeCount);
   const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
-    if (isOverlayOpen) {
-      setShowMessage(false); // Hide message if overlay opens
-      return; // Do not run timers if overlay is open
-    }
-
-    const timer = setTimeout(() => {
-      setShowMessage(true);
-      const hideTimer = setTimeout(() => setShowMessage(false), 3000); // Show for 3 seconds
-      return () => clearTimeout(hideTimer);
-    }, 5000); // Show message after 5 seconds initially
-
-    const interval = setInterval(() => {
-      setShowMessage(true);
-      const hideTimer = setTimeout(() => setShowMessage(false), 3000); // Show for 3 seconds
-      return () => clearTimeout(hideTimer);
-    }, 15000); // Repeat every 15 seconds
-
-    return () => {
-      clearTimeout(timer);
-      clearInterval(interval);
-    };
-  }, [isOverlayOpen]);
+    // Sync state with global variable when mounted
+    setLikes(globalLikeCount);
+  }, []);
 
   const handleLike = () => {
-    setLikes(prevLikes => prevLikes + 1);
+    globalLikeCount += 1;
+    setLikes(globalLikeCount);
+
+    // Show thank-you message for a moment
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 2000);
   };
 
   return (
-    <div className={`fixed bottom-8 left-8 z-50 flex flex-col items-center ${isOverlayOpen ? 'hidden' : ''}`}>
+    <div
+      className={`fixed bottom-8 left-8 z-50 flex flex-col items-center ${
+        isOverlayOpen ? 'hidden' : ''
+      }`}
+    >
+      {/* Pop-up message */}
       <div
-        className={`absolute bottom-full mb-2 px-4 py-2 bg-surface/80 text-text-main text-sm rounded-lg shadow-lg transition-opacity duration-500
-          ${showMessage ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-          border border-accent backdrop-blur-sm
+        className={`absolute bottom-full mb-3 px-4 py-2 bg-surface/90 border border-accent text-text-main text-sm rounded-lg shadow-lg transition-all duration-500
+          ${showMessage ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'}
         `}
       >
-        If you loved this website ❤️
+        💖 Thank you for your support!
       </div>
+
+      {/* Like Button */}
       <button
         onClick={handleLike}
-        className="relative flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white text-2xl shadow-lg
-          hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-75
-          group
-        "
+        className="relative flex items-center justify-center text-2xl text-white transition-all duration-300 rounded-full shadow-lg w-14 h-14 bg-primary hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-75 "
       >
-        <FaHeart className="group-active:animate-pulse" />
+        <FaHeart className="transition-transform duration-200 group-active:scale-125" />
+
+        {/* Like Count */}
         {likes > 0 && (
-          <span className="absolute -top-2 -right-2 bg-accent text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center border-2 border-surface">
+          <span className="absolute flex items-center justify-center w-6 h-6 text-xs font-bold border-2 rounded-full -top-2 -right-2 bg-accent border-surface">
             {likes}
           </span>
         )}
