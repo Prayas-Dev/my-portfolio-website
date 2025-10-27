@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import profileImg from '../../assets/profile2.png';
+import {ReactTyped} from "react-typed";
+
 
 const Hero = () => {
   return (
@@ -15,11 +17,29 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex-1 text-center md:text-left"
         >
-          <h1 className="text-5xl font-bold font-mona-sans md:text-7xl text-text-main">
-            Hi, I'm <span className="text-accent">Prayas</span>
+          <h1 className="mb-2 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-5xl">
+            Hi, I am
           </h1>
+          <h2 className="mb-4 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-5xl lg:text-5xl">
+            Prayas Pandey
+          </h2>
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 text-[#8245ec] leading-tight">
+            <span className="text-white">I am a </span>
+            <ReactTyped
+              strings={[
+                'Full Stack Developer',
+                'UI/UX Developer',
+                'AIML Engineer',
+                'Coder',
+              ]}
+              typeSpeed={100}
+              backSpeed={50}
+              backDelay={2000}
+              loop
+            />
+          </h3>
           <p className="mt-4 text-lg md:text-xl text-text-secondary">
-            A passionate Full Stack Developer with a love for creating beautiful and functional web applications.
+            Full-stack developer skilled in building intelligent, responsive web applications with robust backend services and intuitive UI, combining data-driven insights with modern development stacks.
           </p>
           <motion.a
   href="/Resume_Updated.pdf"

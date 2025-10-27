@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const navLinks = [
   { title: 'About', href: '#about' },
@@ -50,37 +51,63 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex items-center justify-between h-20 px-6 mx-auto max-w-7xl">
+      <div className="flex items-center justify-between h-20 max-w-6xl mx-auto">
         {/* Logo */}
-        <a
-          href="#home"
-          className="text-2xl font-bold font-mona-sans text-accent"
-        >
-          Prayas
-        </a>
+        <div className="text-2xl font-semibold cursor-pointer select-none">
+          <span className="text-[#8245ec]">&lt;</span>
+          <span className="text-white">Prayas</span>
+          <span className="text-[#8245ec]">/</span>
+          <span className="text-white">Pandey</span>
+          <span className="text-[#8245ec]">&gt;</span>
+        </div>
 
         {/* Desktop Menu */}
-        <div className="items-center hidden gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.title}
-              href={link.href}
-              className={`relative font-medium transition-colors duration-300 group ${
-                activeLink === link.href.substring(1)
-                  ? 'text-accent'
-                  : 'text-text-main hover:text-accent'
-              }`}
-            >
-              {link.title}
-              <span
-                className={`absolute left-0 bottom-0 h-0.5 bg-accent transition-all duration-300 ${
+        <div className="items-center hidden gap-6 md:flex">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.title}
+                href={link.href}
+                className={`relative font-medium transition-colors duration-300 group ${
                   activeLink === link.href.substring(1)
-                    ? 'w-full'
-                    : 'w-0 group-hover:w-full'
+                    ? 'text-accent'
+                    : 'text-text-main hover:text-accent'
                 }`}
-              ></span>
+              >
+                {link.title}
+                <span
+                  className={`absolute left-0 bottom-0 h-0.5 bg-accent transition-all duration-300 ${
+                    activeLink === link.href.substring(1)
+                      ? 'w-full'
+                      : 'w-0 group-hover:w-full'
+                  }`}
+                ></span>
+              </a>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div className="w-px h-6 bg-gradient-to-b from-[#8245ec] to-transparent rounded-full opacity-60 mx-3"></div>
+
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/Prayas-Dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 transition-all duration-300 hover:text-[#8245ec] hover:scale-110"
+            >
+              <FaGithub size={22} />
             </a>
-          ))}
+            <a
+              href="https://www.linkedin.com/in/prayas-pandey-8565a2256/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 transition-all duration-300 hover:text-[#8245ec] hover:scale-110"
+            >
+              <FaLinkedin size={22} />
+            </a>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -119,6 +146,26 @@ const Navbar = () => {
                   {link.title}
                 </button>
               ))}
+
+              {/* Social Icons in Mobile Menu */}
+              <div className="flex items-center gap-6 mt-4">
+                <a
+                  href="https://github.com/Prayas-Dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 transition-all duration-300 hover:text-[#8245ec] hover:scale-110"
+                >
+                  <FaGithub size={24} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/prayas-pandey-8565a2256/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 transition-all duration-300 hover:text-[#8245ec] hover:scale-110"
+                >
+                  <FaLinkedin size={24} />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
