@@ -70,7 +70,7 @@ const cardVariants = {
         </div>
 
         {/* Desktop Timeline Layout */}
-        <div className="relative hidden md:block">
+        <div className="relative hidden max-w-6xl px-4 mx-auto md:block">
           <div className="absolute w-1 h-full transform -translate-x-1/2 rounded-full left-1/2 bg-primary"></div>
           {experiences.map((experience, index) => (
             <motion.div
@@ -78,11 +78,13 @@ const cardVariants = {
               className={`mb-12 flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
               variants={cardVariants}
             >
-              <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+              <div className={`w-[48%] ${index % 2 === 0 ? 'pr-4' : 'pl-4'}`}>
                 <motion.div
-                  className="relative p-6 transition-all duration-300 transform border-2 border-transparent rounded-lg shadow-lg group bg-gradient-to-br from-background to-surface hover:border-accent hover:scale-105"
-                  whileHover={{ scale: 1.03 }}
-                  >
+  className="relative p-6 transition-all duration-300 border-2 border-transparent rounded-lg shadow-lg group bg-gradient-to-br from-background to-surface hover:border-accent"
+  whileHover={{ scale: 1.02 }}
+  style={{ overflow: 'hidden', maxWidth: '100%' }}
+>
+
                   <div className="absolute inset-0 transition-opacity duration-300 rounded-lg opacity-0 group-hover:opacity-100" style={{ boxShadow: '0 0 15px #00C6D8' }}></div>
                   <div className="relative z-10 flex items-center mb-4">
                     {experience.img && <img src={experience.img} alt={experience.company} className="w-12 h-12 mr-4 rounded-full" />}
