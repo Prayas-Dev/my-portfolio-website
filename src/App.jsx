@@ -1,3 +1,5 @@
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
@@ -12,6 +14,7 @@ import LikeButton from "./components/LikeButton/LikeButton";
 function App() {
   return (
     <div className="bg-primary w-full overflow-hidden">
+      <ToastContainer />
       <Navbar />
       <div className="relative">
         <Hero />
