@@ -1,19 +1,93 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
+import { toast, Slide } from 'react-toastify';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { CheckCircle2, XCircle } from 'lucide-react'; // for custom icons
 
 const socialLinks = [
   { icon: <FaGithub />, href: 'https://github.com/Prayas-Dev' },
   { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/prayas-pandey-' },
-  { icon: <FaTwitter />, href: '#' }, // Add your Twitter link
+  { icon: <FaTwitter />, href: '#' },
 ];
 
 const Contact = () => {
+  const form = useRef();
+  const [isSent, setIsSent] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_9vn712q',       // ✅ your EmailJS service ID
+        'template_p3i4fv6',      // ✅ your EmailJS template ID
+        form.current,
+        '-290b_mK7eHCRw5ch'      // ✅ your EmailJS public key
+      )
+      .then(
+        () => {
+          setIsSent(true);
+          form.current.reset();
+
+          toast.success(
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="text-green-400" size={20} />
+              <span>Message sent successfully!</span>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Slide,
+              style: {
+                background: "linear-gradient(135deg, #1e1b4b, #4c1d95)",
+                color: "#fff",
+                borderRadius: "10px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
+              }
+            }
+          );
+        },
+        (error) => {
+          console.error("FAILED...", error);
+
+          toast.error(
+            <div className="flex items-center gap-2">
+              <XCircle className="text-red-400" size={20} />
+              <span>Failed to send message. Please try again.</span>
+            </div>,
+            {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Slide,
+              style: {
+                background: "linear-gradient(135deg, #2e1065, #7e22ce)",
+                color: "#fff",
+                borderRadius: "10px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.4)"
+              }
+            }
+          );
+        }
+      );
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -29,43 +103,83 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-background">
+    <section id="contact" ref={ref} className="relative py-20 bg-background">
       <motion.div
-        className="max-w-4xl mx-auto px-6"
+        className="max-w-4xl px-6 mx-auto"
         variants={containerVariants}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
       >
-        <motion.h2 variants={itemVariants} className="text-4xl font-bold font-mona-sans mb-8 text-center text-accent">Get in Touch</motion.h2>
-        <motion.p variants={itemVariants} className="text-text-secondary text-center mb-12">
+        <motion.h2
+          variants={itemVariants}
+          className="mb-8 text-4xl font-bold text-center font-mona-sans text-accent"
+        >
+          Get in Touch
+        </motion.h2>
+
+        <motion.p
+          variants={itemVariants}
+          className="mb-12 text-center text-text-secondary"
+        >
           Have a project in mind or just want to say hi? Feel free to reach out!
         </motion.p>
+
         <motion.form
+          ref={form}
+          onSubmit={sendEmail}
           variants={itemVariants}
-          action="https://formspree.io/f/your_form_id" // Replace with your Formspree ID
-          method="POST"
           className="grid grid-cols-1 gap-6"
         >
-          <input type="text" name="name" placeholder="Your Name" className="bg-gradient-to-br from-surface to-background p-4 rounded-lg border-2 border-primary focus:border-accent focus:outline-none transition-colors text-text-main placeholder-text-secondary" required />
-          <input type="email" name="email" placeholder="Your Email" className="bg-gradient-to-br from-surface to-background p-4 rounded-lg border-2 border-primary focus:border-accent focus:outline-none transition-colors text-text-main placeholder-text-secondary" required />
-          <textarea name="message" placeholder="Your Message" rows="5" className="bg-gradient-to-br from-surface to-background p-4 rounded-lg border-2 border-primary focus:border-accent focus:outline-none transition-colors text-text-main placeholder-text-secondary" required></textarea>
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            className="p-4 transition-colors border-2 rounded-lg bg-gradient-to-br from-surface to-background border-primary focus:border-accent focus:outline-none text-text-main placeholder-text-secondary"
+            required
+          />
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            className="p-4 transition-colors border-2 rounded-lg bg-gradient-to-br from-surface to-background border-primary focus:border-accent focus:outline-none text-text-main placeholder-text-secondary"
+            required
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            className="p-4 transition-colors border-2 rounded-lg bg-gradient-to-br from-surface to-background border-primary focus:border-accent focus:outline-none text-text-main placeholder-text-secondary"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            className="p-4 transition-colors border-2 rounded-lg bg-gradient-to-br from-surface to-background border-primary focus:border-accent focus:outline-none text-text-main placeholder-text-secondary"
+            required
+          ></textarea>
+
           <motion.button
             type="submit"
-            className="relative group bg-primary text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 overflow-hidden"
+            className="relative px-6 py-3 overflow-hidden font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg group bg-primary hover:scale-105"
             whileHover={{ scale: 1.05 }}
           >
             <span className="relative z-10">Send Message</span>
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></span>
+            <span className="absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 bg-gradient-to-r from-primary via-accent to-primary group-hover:opacity-100 animate-pulse"></span>
           </motion.button>
         </motion.form>
-        <motion.div variants={itemVariants} className="flex justify-center gap-8 mt-12">
+
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center gap-8 mt-12"
+        >
           {socialLinks.map((link, index) => (
             <motion.a
               key={index}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-4xl text-text-secondary hover:text-accent transition-colors duration-300"
+              className="text-4xl transition-colors duration-300 text-text-secondary hover:text-accent"
               whileHover={{ y: -5 }}
             >
               {link.icon}
