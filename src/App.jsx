@@ -1,16 +1,25 @@
-import React from "react"
+import React, { Suspense, lazy } from "react"
 import { motion, useScroll, useSpring } from "framer-motion"
 import Navbar from "./components/Navbar/Navbar"
 import About from "./components/About/About"
-import Skills from "./components/Skills/Skills"
-import Experience from "./components/Experience/Experience"
-import Education from "./components/Education/Education"
-import Contact from "./components/Contact/Contact"
-import Work from "./components/Work/Work"
-import Footer from "./components/Footer/Footer"
 import BlurBlob from "./BlurBlob"
 import CustomCursor from "./components/CustomCursor/CustomCursor"
 import ParticleBackground from "./components/ParticleBackground/ParticleBackground"
+
+// Lazy-loaded components for better performance
+const Skills = lazy(() => import("./components/Skills/Skills"))
+const Experience = lazy(() => import("./components/Experience/Experience"))
+const Work = lazy(() => import("./components/Work/Work"))
+const Education = lazy(() => import("./components/Education/Education"))
+const Contact = lazy(() => import("./components/Contact/Contact"))
+const Footer = lazy(() => import("./components/Footer/Footer"))
+
+// Simple loading fallback
+const SectionLoader = () => (
+  <div className="flex items-center justify-center w-full py-20 min-h-[400px]">
+    <div className="w-12 h-12 border-4 border-[#8245ec] border-t-transparent rounded-full animate-spin" />
+  </div>
+)
 
 function App() {
   const { scrollYProgress } = useScroll()
@@ -38,13 +47,17 @@ function App() {
 
       <div className="relative pt-20 z-10">
         <Navbar />
+        {/* About is kept eager as it's the hero section */}
         <About />
-        <Skills />
-        <Experience />
-        <Work />
-        <Education />
-        <Contact />
-        <Footer />
+        
+        <Suspense fallback={<SectionLoader />}>
+          <Skills />
+          <Experience />
+          <Work />
+          <Education />
+          <Contact />
+          <Footer />
+        </Suspense>
       </div>
     </div>
   )
