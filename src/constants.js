@@ -1,121 +1,103 @@
 // Skills Section Logo's
-import htmlLogo from './assets/tech_logo/html.png';
-import cssLogo from './assets/tech_logo/css.png';
-import sassLogo from './assets/tech_logo/sass.png';
-import javascriptLogo from './assets/tech_logo/javascript.png';
-import reactjsLogo from './assets/tech_logo/reactjs.png';
-import angularLogo from './assets/tech_logo/angular.png';
-import reduxLogo from './assets/tech_logo/redux.png';
-import nextjsLogo from './assets/tech_logo/nextjs.png';
-import tailwindcssLogo from './assets/tech_logo/tailwindcss.png';
-import gsapLogo from './assets/tech_logo/gsap.png';
-import materialuiLogo from './assets/tech_logo/materialui.png';
-import bootstrapLogo from './assets/tech_logo/bootstrap.png';
-import springbootLogo from './assets/tech_logo/springboot.png';
-import nodejsLogo from './assets/tech_logo/nodejs.png';
-import expressjsLogo from './assets/tech_logo/express.png';
-import mysqlLogo from './assets/tech_logo/mysql.png';
-import mongodbLogo from './assets/tech_logo/mongodb.png';
-import firebaseLogo from './assets/tech_logo/firebase.png';
-import cLogo from './assets/tech_logo/c.png';
-import cppLogo from './assets/tech_logo/cpp.png';
-import javaLogo from './assets/tech_logo/java.png';
-import pythonLogo from './assets/tech_logo/python.png';
-import typescriptLogo from './assets/tech_logo/typescript.png';
-import gitLogo from './assets/tech_logo/git.png';
-import githubLogo from './assets/tech_logo/github.png';
-import vscodeLogo from './assets/tech_logo/vscode.png';
-import postmanLogo from './assets/tech_logo/postman.png';
-import mcLogo from './assets/tech_logo/mc.png';
-import figmaLogo from './assets/tech_logo/figma.png';
-import netlifyLogo from './assets/tech_logo/netlify.png';
-import vercelLogo from './assets/tech_logo/vercel.png';
-import postgreLogo from './assets/tech_logo/postgre.png';
-import djangoLogo from './assets/tech_logo/django.png';
-import tensorflowLogo from './assets/tech_logo/tensorflow.png';
-import skLearnLogo from './assets/tech_logo/scikit-learn.png';
-import langchainLogo from './assets/tech_logo/langchain.png';
-import openaiLogo from './assets/tech_logo/openai.png';
-import geminiLogo from './assets/tech_logo/gemini.jpg';
-import nltkLogo from './assets/tech_logo/nltk.png';
-import huggingfaceLogo from './assets/tech_logo/huggingface.png';
-import promptEngineeringLogo from './assets/tech_logo/prompt-engineering.jpg';
-
-
+import htmlLogo from "./assets/tech_logo/html.png";
+import cssLogo from "./assets/tech_logo/css.png";
+import sassLogo from "./assets/tech_logo/sass.png";
+import javascriptLogo from "./assets/tech_logo/javascript.png";
+import reactjsLogo from "./assets/tech_logo/reactjs.png";
+import angularLogo from "./assets/tech_logo/angular.png";
+import reduxLogo from "./assets/tech_logo/redux.png";
+import nextjsLogo from "./assets/tech_logo/nextjs.png";
+import tailwindcssLogo from "./assets/tech_logo/tailwindcss.png";
+import gsapLogo from "./assets/tech_logo/gsap.png";
+import materialuiLogo from "./assets/tech_logo/materialui.png";
+import bootstrapLogo from "./assets/tech_logo/bootstrap.png";
+import springbootLogo from "./assets/tech_logo/springboot.png";
+import nodejsLogo from "./assets/tech_logo/nodejs.png";
+import expressjsLogo from "./assets/tech_logo/express.png";
+import mysqlLogo from "./assets/tech_logo/mysql.png";
+import mongodbLogo from "./assets/tech_logo/mongodb.png";
+import firebaseLogo from "./assets/tech_logo/firebase.png";
+import cLogo from "./assets/tech_logo/c.png";
+import cppLogo from "./assets/tech_logo/cpp.png";
+import javaLogo from "./assets/tech_logo/java.png";
+import pythonLogo from "./assets/tech_logo/python.png";
+import typescriptLogo from "./assets/tech_logo/typescript.png";
+import gitLogo from "./assets/tech_logo/git.png";
+import githubLogo from "./assets/tech_logo/github.png";
+import vscodeLogo from "./assets/tech_logo/vscode.png";
+import postmanLogo from "./assets/tech_logo/postman.png";
+import mcLogo from "./assets/tech_logo/mc.png";
+import figmaLogo from "./assets/tech_logo/figma.png";
+import netlifyLogo from "./assets/tech_logo/netlify.png";
+import vercelLogo from "./assets/tech_logo/vercel.png";
+import postgreLogo from "./assets/tech_logo/postgre.png";
+import csharpLogo from "./assets/tech_logo/csharp.png";
 
 export const SkillsInfo = [
   {
-    title: 'Frontend',
+    title: "Frontend",
     skills: [
-      { name: 'HTML', logo: htmlLogo },
-      { name: 'CSS', logo: cssLogo },
-      { name: 'SASS', logo: sassLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'React JS', logo: reactjsLogo },
-      { name: 'Redux', logo: reduxLogo },
-      { name: 'Next JS', logo: nextjsLogo },
-      { name: 'Tailwind CSS', logo: tailwindcssLogo },
-      { name: 'GSAP', logo: gsapLogo },
-      { name: 'Material UI', logo: materialuiLogo },
-      { name: 'Bootstrap', logo: bootstrapLogo },
+      { name: "HTML", logo: htmlLogo },
+      { name: "CSS", logo: cssLogo },
+      { name: "SASS", logo: sassLogo },
+      { name: "JavaScript", logo: javascriptLogo },
+      { name: "React JS", logo: reactjsLogo },
+      { name: "Angular", logo: angularLogo },
+      { name: "Redux", logo: reduxLogo },
+      { name: "Next JS", logo: nextjsLogo },
+      { name: "Tailwind CSS", logo: tailwindcssLogo },
+      { name: "GSAP", logo: gsapLogo },
+      { name: "Material UI", logo: materialuiLogo },
+      { name: "Bootstrap", logo: bootstrapLogo },
     ],
   },
   {
-    title: 'Backend',
+    title: "Backend",
     skills: [
-      { name: 'Node JS', logo: nodejsLogo },
-      { name: 'Express JS', logo: expressjsLogo },
-      { name: 'MySQL', logo: mysqlLogo },
-      { name: 'MongoDB', logo: mongodbLogo },
-      { name: 'Firebase', logo: firebaseLogo },
-      { name: 'PostgreSQL', logo: postgreLogo },
-      { name: 'Django', logo: djangoLogo },
+      { name: "Springboot", logo: springbootLogo },
+      { name: "Node JS", logo: nodejsLogo },
+      { name: "Express JS", logo: expressjsLogo },
+      { name: "MySQL", logo: mysqlLogo },
+      { name: "MongoDB", logo: mongodbLogo },
+      { name: "Firebase", logo: firebaseLogo },
+      { name: "PostgreSQL", logo: postgreLogo },
     ],
   },
   {
-    title: 'Languages',
+    title: "Languages",
     skills: [
-      { name: 'C', logo: cLogo },
-      { name: 'C++', logo: cppLogo },
-      { name: 'Java', logo: javaLogo },
-      { name: 'Python', logo: pythonLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'TypeScript', logo: typescriptLogo },
+      { name: "C", logo: cLogo },
+      { name: "C++", logo: cppLogo },
+      { name: "Java", logo: javaLogo },
+      { name: "Python", logo: pythonLogo },
+      { name: "C-Sharp", logo: csharpLogo },
+      { name: "JavaScript", logo: javascriptLogo },
+      { name: "TypeScript", logo: typescriptLogo },
     ],
   },
   {
-    title: 'Tools',
+    title: "Tools",
     skills: [
-      { name: 'Git', logo: gitLogo },
-      { name: 'GitHub', logo: githubLogo },
-      { name: 'VS Code', logo: vscodeLogo },
-      { name: 'Postman', logo: postmanLogo },
-      { name: 'Compass', logo: mcLogo },
-      { name: 'Vercel', logo: vercelLogo },
-      { name: 'Netlify', logo: netlifyLogo },
-      { name: 'Figma', logo: figmaLogo },
+      { name: "Git", logo: gitLogo },
+      { name: "GitHub", logo: githubLogo },
+      { name: "VS Code", logo: vscodeLogo },
+      { name: "Postman", logo: postmanLogo },
+      { name: "Compass", logo: mcLogo },
+      { name: "Vercel", logo: vercelLogo },
+      { name: "Netlify", logo: netlifyLogo },
+      { name: "Figma", logo: figmaLogo },
     ],
   },
-  {
-  title: 'AI & Machine Learning',
-  skills: [
-    { name: 'TensorFlow', logo: tensorflowLogo },
-    { name: 'Scikit-learn', logo: skLearnLogo },
-    { name: 'LangChain', logo: langchainLogo },
-    { name: 'OpenAI API', logo: openaiLogo },
-    { name: 'Gemini API', logo: geminiLogo },
-    { name: 'NLTK', logo: nltkLogo },
-    { name: 'Hugging Face Transformers', logo: huggingfaceLogo },
-    { name: 'Prompt Engineering', logo: promptEngineeringLogo },
-  ],
-},
-
 ];
 
-  export const experiences = [  
+import aspiringLogo from "./assets/company_logo/webverse_logo.png";
+import vcetLogo from "./assets/company_logo/agc_logo.png";
+import coherenceHackathonLogo from "./assets/company_logo/newtonschool_logo.png";
+
+export const experiences = [
   {
     id: 0,
-    // img: aspiringLogo,
+    img: aspiringLogo,
     role: "Web Developer Intern",
     company: "Aspiring Media Tech",
     date: "June 2024 - September 2024",
@@ -129,12 +111,12 @@ export const SkillsInfo = [
       "PostgreSQL",
       "RESTful APIs",
       "Cron Jobs",
-      "RBAC"
+      "RBAC",
     ],
   },
   {
     id: 1,
-    // img: vcetLogo, // optional if you want to highlight college-related work
+    img: vcetLogo,
     role: "Core Member - Bitbytego Committee",
     company: "Vidyavardhini’s College of Engineering and Technology",
     date: "2023 - Present",
@@ -144,12 +126,12 @@ export const SkillsInfo = [
       "Team Coordination",
       "Event Management",
       "Web Technologies",
-      "Communication"
+      "Communication",
     ],
   },
   {
     id: 2,
-    // img: coherenceHackathonLogo, // optional logo for hackathon participation
+    img: coherenceHackathonLogo,
     role: "Backend Developer (Hackathon Project)",
     company: "Coherence Hackathon",
     date: "March 2024",
@@ -160,16 +142,17 @@ export const SkillsInfo = [
       "REST APIs",
       "PostgreSQL",
       "Team Collaboration",
-      "AI Integration"
+      "AI Integration",
     ],
   },
 ];
 
-  
-  export const education = [
+export const education = [
   {
     id: 0,
-    school: "Vidyavardhini’s College of Engineering and Technology, Mumbai University",
+    img: vcetLogo,
+    school:
+      "Vidyavardhini’s College of Engineering and Technology, Mumbai University",
     date: "Sept 2022 - July 2026",
     grade: "7.4 CGPA (Current)",
     desc: "Pursuing a Bachelor of Engineering in Computer Engineering. Developed a strong foundation in operating systems, DBMS, data structures, machine learning, and web technologies. Actively participating in hackathons and projects involving AI and blockchain to strengthen technical and problem-solving skills.",
@@ -177,6 +160,7 @@ export const SkillsInfo = [
   },
   {
     id: 1,
+    img: aspiringLogo,
     school: "Adarsh Education Society, Mumbai",
     date: "Apr 2020 - Mar 2022",
     grade: "82%",
@@ -185,6 +169,7 @@ export const SkillsInfo = [
   },
   {
     id: 2,
+    img: coherenceHackathonLogo,
     school: "Morning Star English High School, Mumbai",
     date: "Apr 2018 - Mar 2020",
     grade: "85%",
@@ -197,16 +182,23 @@ export const projects = [
   {
     id: 0,
     title: "MindSync – AI Journaling Assistant",
-    icon: "FaBrain",
+    image: "https://picsum.photos/seed/mindsync/800/600",
     description:
       "An AI-powered journaling assistant that analyzes user entries to generate personalized insights and reflections. Features semantic search using PGVector and contextual AI summaries powered by Gemini API. Includes JWT-based secure authentication.",
-    tags: ["React JS", "Node.js", "PostgreSQL", "PGVector", "Gemini API", "JWT"],
+    tags: [
+      "React JS",
+      "Node.js",
+      "PostgreSQL",
+      "PGVector",
+      "Gemini API",
+      "JWT",
+    ],
     github: "https://github.com/Prayas-Dev/ai_journaling",
   },
   {
     id: 1,
     title: "Animated 3D Website – GSAP Demo",
-    icon: "FaGlobe",
+    image: "https://picsum.photos/seed/gsap/800/600",
     description:
       "A visually stunning 3D animated website demonstrating scroll-triggered GSAP animations with optimized performance and responsiveness across 15+ devices.",
     tags: ["HTML", "CSS", "JavaScript", "GSAP", "SVG"],
@@ -215,7 +207,7 @@ export const projects = [
   {
     id: 2,
     title: "E-Commerce Chatbot Platform",
-    icon: "FaShoppingCart",
+    image: "https://picsum.photos/seed/ecommerce/800/600",
     description:
       "A full-stack intelligent chatbot system designed to assist users in shopping queries. Includes product search, order management, and natural language understanding with Flask/Django backend.",
     tags: ["React JS", "Python", "Flask", "REST API", "PostgreSQL"],
@@ -224,7 +216,7 @@ export const projects = [
   {
     id: 3,
     title: "Decentralized Digital Identity (DID) System",
-    icon: "FaLock",
+    image: "https://picsum.photos/seed/did/800/600",
     description:
       "A blockchain-based digital identity system implementing Self-Sovereign Identity and Zero-Knowledge Proofs using Solidity, Polygon, and Anon Aadhaar integration.",
     tags: ["Solidity", "Polygon", "ZKP", "Anon Aadhaar", "Blockchain"],

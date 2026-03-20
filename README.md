@@ -1,92 +1,16 @@
-# 🌐 Prayas Pandey — Personal Portfolio
+# React + Vite
 
-![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
-![Vite](https://img.shields.io/badge/Bundler-Vite-646CFF?logo=vite)
-![TailwindCSS](https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?logo=tailwind-css)
-![FramerMotion](https://img.shields.io/badge/Animation-FramerMotion-ff69b4?logo=framer)
-![Vercel](https://img.shields.io/badge/Hosting-Vercel-black?logo=vercel)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Welcome to my **personal portfolio website**, a showcase of my projects, skills, and professional journey as a developer.  
-Built with **React + Vite**, it’s designed for smooth performance, elegant transitions, and a modern responsive UI.
+Currently, two official plugins are available:
 
----
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Live Demo
-👉 **Visit my portfolio here:** [my-portfolio-website-steel-two.vercel.app](https://my-portfolio-website-steel-two.vercel.app/)
+## React Compiler
 
----
+The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🧩 Features
+## Expanding the ESLint configuration
 
-- ⚡ **Fast and Lightweight** — Powered by Vite for lightning-fast builds and hot reloading  
-- 🎨 **Modern UI** — Responsive and animated design using **Framer Motion** and **Tailwind CSS**  
-- 💼 **Portfolio Showcase** — Highlights my featured projects and experiences  
-- 🧠 **About Section** — A glimpse into my skills, journey, and background  
-- 📞 **Contact Section** — Easy ways to connect with me  
-- 🌙 **Aesthetic Design** — Clean, minimal, and developer-friendly interface  
-
----
-
-## 🛠️ Tech Stack
-
-| Category | Technologies |
-|-----------|--------------|
-| **Frontend** | React, Vite, JavaScript (ES6+) |
-| **Styling** | Tailwind CSS, Framer Motion |
-| **Icons & UI** | React Icons, Lucide React |
-| **Hosting** | Vercel |
-
----
-
-## 📂 Project Structure
-
-my-portfolio/
-├── public/ # Static assets
-├── src/
-│ ├── components/ # Reusable components (Navbar, Hero, etc.)
-│ ├── assets/ # Images and icons
-│ ├── App.jsx # Main application entry
-│ ├── main.jsx # React DOM render
-│ └── styles/ # Global styling or custom CSS
-├── index.html
-├── package.json
-└── README.md
-
-yaml
-Copy code
-
----
-
-## ⚙️ Installation & Setup
-
-To run this project locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/my-portfolio.git
-
-# Navigate to project folder
-cd my-portfolio
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-Then open your browser at http://localhost:5173/
-```
-
-
-
-📬 Contact
-Feel free to reach out or connect with me:
-
-💼 LinkedIn : https://www.linkedin.com/in/prayas-pandey-8565a2256/
-
-🐙 GitHub : https://github.com/Prayas-Dev
-
-
-🖋️ License
-This project is open-source and available under the MIT License.
-
-Designed and developed with ❤️ by Prayas Pandey
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

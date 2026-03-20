@@ -1,13 +1,47 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
-@layer base {
-  body {
-    @apply font-sans bg-background text-text-main;
+@import "tailwindcss";
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.font-display {
+  font-family: "DM Sans", sans-serif;
+}
+
+.magnetic-btn {
+  background: linear-gradient(90deg, #8245ec, #a855f7);
+  box-shadow:
+    0 0 2px #8245ec,
+    0 0 2px #8245ec,
+    0 0 15px rgba(130, 69, 236, 0.3);
+}
+
+.magnetic-btn:hover {
+  box-shadow:
+    0 0 30px #8245ec,
+    0 0 60px rgba(130, 69, 236, 0.4);
+}
+
+@layer utilities {
+  .clip-path-custom {
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
   }
+  .clip-path-custom-2 {
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 25% 95%, 0 100%);
+  }
+  .clip-path-custom-3 {
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 96%, 0 100%);
+  }
+}
 
-  html {
-    scroll-behavior: smooth;
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
