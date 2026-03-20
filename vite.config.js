@@ -20,9 +20,6 @@ export default defineConfig({
             if (id.includes('gsap') || id.includes('framer-motion') || id.includes('lenis')) {
               return 'vendor-animation';
             }
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
-              return 'vendor-react';
-            }
             return 'vendor-utils';
           }
         }
